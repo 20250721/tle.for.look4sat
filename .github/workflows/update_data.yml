@@ -22,21 +22,23 @@ jobs:
 
       - name: Run Download Script
         run: |
-          # 格式化生成 log.md
-          echo "# Auto Update Log" > log.md
-          echo "" >> log.md
-          echo "**Last Execution:** $(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> log.md
-          echo "" >> log.md
-          echo '```text' >> log.md
+          # 格式化生成 README.md，增加了一些简单的描述信息
+          echo "# Auto Update Status" > README.md
+          echo "" >> README.md
+          echo "This repository automatically checks and updates orbital and transmitter data from various sources every 2 hours for look4sat" >> README.md
+          echo "" >> README.md
+          echo "**Last Execution:** $(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> README.md
+          echo "" >> README.md
+          echo '```text' >> README.md
           
-          # 执行脚本，合并标准输出和错误输出，显示在控制台的同时追加写入 log.md
-          python download.py 2>&1 | tee -a log.md
+          # 执行脚本，合并标准输出和错误输出，显示在控制台的同时追加写入 README.md
+          python download.py 2>&1 | tee -a README.md
           
-          echo '```' >> log.md
+          echo '```' >> README.md
 
       - name: Push to Branch
         run: |
-          # 检测是否有任何文件（包括 log.md）发生变更
+          # 检测是否有任何文件（包括 README.md）发生变更
           if [ -n "$(git status --porcelain)" ]; then
             UPDATE_TIME=$(date -u +'%Y-%m-%d %H:%M:%S UTC')
             > commit_msg.txt
@@ -58,7 +60,7 @@ jobs:
               done
             else
               # 仅更新日志（数据未变动或被限速）时的提交信息
-              echo "Auto orbital data check (log updated) | $UPDATE_TIME" >> commit_msg.txt
+              echo "Auto orbital data check (README updated) | $UPDATE_TIME" >> commit_msg.txt
               echo "" >> commit_msg.txt
               echo "No data files were updated in this run (up-to-date or Celestrak rate-limited)." >> commit_msg.txt
             fi
@@ -66,8 +68,8 @@ jobs:
             git config --global user.name 'github-actions[bot]'
             git config --global user.email 'github-actions[bot]@users.noreply.github.com'
             
-            # 将变更（包括 data/ 和 log.md）暂存并推送到仓库
-            git add data/ log.md
+            # 将变更（包括 data/ 和 README.md）暂存并推送到仓库
+            git add data/ README.md
             git commit -F commit_msg.txt
             git push origin HEAD
             rm -f commit_msg.txt
