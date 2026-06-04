@@ -1,7 +1,6 @@
 import urllib.request
 import os
 
-# 定义需要下载的任务
 tasks = [
     {"name": "All", "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=active&FORMAT=csv", "ext": "csv"},
     {"name": "Amateur", "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=amateur&FORMAT=csv", "ext": "csv"},
