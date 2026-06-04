@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4 # 这一步会将仓库中的 data/ 目录及 download.py 克隆至当前工作目录
+        uses: actions/checkout@v4 # 克隆仓库（包含 data/ 历史目录、download.py、历史 log.md）
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -21,10 +21,22 @@ jobs:
           python-version: '3.x'
 
       - name: Run Download Script
-        run: python download.py
+        run: |
+          # 格式化生成 log.md
+          echo "# Auto Update Log" > log.md
+          echo "" >> log.md
+          echo "**Last Execution:** $(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> log.md
+          echo "" >> log.md
+          echo '```text' >> log.md
+          
+          # 执行脚本，合并标准输出和错误输出，显示在控制台的同时追加写入 log.md
+          python download.py 2>&1 | tee -a log.md
+          
+          echo '```' >> log.md
 
       - name: Push to Branch
         run: |
+          # 仅在 data/ 目录下的文件有变更时，才提交数据和 log.md
           if [ -n "$(git status --porcelain data/)" ]; then
             UPDATE_TIME=$(date -u +'%Y-%m-%d %H:%M:%S UTC')
             > commit_msg.txt
@@ -41,10 +53,12 @@ jobs:
 
             git config --global user.name 'github-actions[bot]'
             git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-            git add data/
+            
+            # 同时将 data/ 的更新以及新的 log.md 暂存并推送到仓库
+            git add data/ log.md
             git commit -F commit_msg.txt
             git push origin HEAD
             rm -f commit_msg.txt
           else
-            echo "No file changed, skip commit & push."
+            echo "No data file changed, skip commit & push."
           fi
