@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4 # 克隆仓库（包含 data/ 历史目录、download.py、历史 log.md）
+        uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -36,29 +36,41 @@ jobs:
 
       - name: Push to Branch
         run: |
-          # 仅在 data/ 目录下的文件有变更时，才提交数据和 log.md
-          if [ -n "$(git status --porcelain data/)" ]; then
+          # 检测是否有任何文件（包括 log.md）发生变更
+          if [ -n "$(git status --porcelain)" ]; then
             UPDATE_TIME=$(date -u +'%Y-%m-%d %H:%M:%S UTC')
             > commit_msg.txt
-            echo "Auto orbital data update | $UPDATE_TIME" >> commit_msg.txt
-            echo "" >> commit_msg.txt
-            echo "Modified files & size:" >> commit_msg.txt
-
-            git status --porcelain data/ | awk '{print $NF}' | sed 's/"//g' | while read -r file; do
-              if [ -f "$file" ]; then
-                FSIZE=$(du -sh "$file" | awk '{print $1}')
-                echo " - $file | $FSIZE" >> commit_msg.txt
-              fi
-            done
+            
+            # 检测 data/ 目录是否有数据文件更新
+            DATA_CHANGES=$(git status --porcelain data/)
+            
+            if [ -n "$DATA_CHANGES" ]; then
+              # 有数据更新时的提交信息
+              echo "Auto orbital data update | $UPDATE_TIME" >> commit_msg.txt
+              echo "" >> commit_msg.txt
+              echo "Modified files & size:" >> commit_msg.txt
+              
+              echo "$DATA_CHANGES" | awk '{print $NF}' | sed 's/"//g' | while read -r file; do
+                if [ -f "$file" ]; then
+                  FSIZE=$(du -sh "$file" | awk '{print $1}')
+                  echo " - $file | $FSIZE" >> commit_msg.txt
+                fi
+              done
+            else
+              # 仅更新日志（数据未变动或被限速）时的提交信息
+              echo "Auto orbital data check (log updated) | $UPDATE_TIME" >> commit_msg.txt
+              echo "" >> commit_msg.txt
+              echo "No data files were updated in this run (up-to-date or Celestrak rate-limited)." >> commit_msg.txt
+            fi
 
             git config --global user.name 'github-actions[bot]'
             git config --global user.email 'github-actions[bot]@users.noreply.github.com'
             
-            # 同时将 data/ 的更新以及新的 log.md 暂存并推送到仓库
+            # 将变更（包括 data/ 和 log.md）暂存并推送到仓库
             git add data/ log.md
             git commit -F commit_msg.txt
             git push origin HEAD
             rm -f commit_msg.txt
           else
-            echo "No data file changed, skip commit & push."
+            echo "No changes at all."
           fi
