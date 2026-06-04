@@ -1,0 +1,50 @@
+name: Auto Update Orbital Data
+
+on:
+  schedule:
+    - cron: '0 */2 * * *' # UTC每2小时执行
+  workflow_dispatch: # 手动触发
+
+permissions:
+  contents: write
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4 # 这一步会将仓库中的 data/ 目录及 download.py 克隆至当前工作目录
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Run Download Script
+        run: python download.py
+
+      - name: Push to Branch
+        run: |
+          if [ -n "$(git status --porcelain data/)" ]; then
+            UPDATE_TIME=$(date -u +'%Y-%m-%d %H:%M:%S UTC')
+            > commit_msg.txt
+            echo "Auto orbital data update | $UPDATE_TIME" >> commit_msg.txt
+            echo "" >> commit_msg.txt
+            echo "Modified files & size:" >> commit_msg.txt
+
+            git status --porcelain data/ | awk '{print $NF}' | sed 's/"//g' | while read -r file; do
+              if [ -f "$file" ]; then
+                FSIZE=$(du -sh "$file" | awk '{print $1}')
+                echo " - $file | $FSIZE" >> commit_msg.txt
+              fi
+            done
+
+            git config --global user.name 'github-actions[bot]'
+            git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+            git add data/
+            git commit -F commit_msg.txt
+            git push origin HEAD
+            rm -f commit_msg.txt
+          else
+            echo "No file changed, skip commit & push."
+          fi
