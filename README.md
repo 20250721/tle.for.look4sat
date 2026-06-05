@@ -2,7 +2,7 @@
 
 This repository automatically checks and updates orbital and transmitter data from various sources every 2 hours for look4sat
 
-**Last Execution:** 2026-06-05 17:00:41 UTC
+**Last Execution:** 2026-06-05 17:47:46 UTC
 
 ```text
 ⏭ All: content no change, skip overwrite
@@ -30,7 +30,7 @@ This repository automatically checks and updates orbital and transmitter data fr
 ⏭ X-Comm: content no change, skip overwrite
 ⏭ Amsat: content no change, skip overwrite
 ⏭ Classified: content no change, skip overwrite
-⏭ McCants: content no change, skip overwrite
+✅ McCants: file updated -> data/McCants.zip
 ❌ R4UAB download failed: <urlopen error timed out>
 ⏭ SatNOGS_API: content no change, skip overwrite
 ```
