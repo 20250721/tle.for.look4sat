@@ -2,7 +2,7 @@
 
 This repository automatically checks and updates orbital and transmitter data from various sources every 2 hours for look4sat
 
-**Last Execution:** 2026-06-11 02:42:02 UTC
+**Last Execution:** 2026-06-11 08:28:15 UTC
 
 ```text
 ✅ All: file updated -> data/All.csv
@@ -13,11 +13,11 @@ This repository automatically checks and updates orbital and transmitter data fr
 ⏭ Engineer: content no change, skip overwrite
 ✅ Geostationary: file updated -> data/Geostationary.csv
 ⏭ Globalstar: content no change, skip overwrite
-✅ GNSS: file updated -> data/GNSS.csv
+⏭ GNSS: content no change, skip overwrite
 ⏭ Intelsat: content no change, skip overwrite
 ⏭ Iridium: content no change, skip overwrite
 ⏭ Military: content no change, skip overwrite
-✅ New: file updated -> data/New.csv
+⏭ New: content no change, skip overwrite
 ⏭ OneWeb: content no change, skip overwrite
 ⏭ Orbcomm: content no change, skip overwrite
 ✅ Resource: file updated -> data/Resource.csv
@@ -28,7 +28,7 @@ This repository automatically checks and updates orbital and transmitter data fr
 ⏭ Swarm: content no change, skip overwrite
 ⏭ Weather: content no change, skip overwrite
 ⏭ X-Comm: content no change, skip overwrite
-✅ Amsat: file updated -> data/Amsat.txt
+⏭ Amsat: content no change, skip overwrite
 ⏭ Classified: content no change, skip overwrite
 ⏭ McCants: content no change, skip overwrite
 ❌ R4UAB download failed: <urlopen error timed out>
