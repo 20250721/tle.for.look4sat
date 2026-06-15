@@ -2,32 +2,32 @@
 
 This repository automatically checks and updates orbital and transmitter data from various sources every 3 hours for look4sat
 
-**Last Execution:** 2026-06-15 08:45:54 UTC
+**Last Execution:** 2026-06-15 11:04:58 UTC
 
 ```text
 ✅ All: file updated -> data/All.csv
-✅ Amateur: file updated -> data/Amateur.csv
-✅ Brightest: file updated -> data/Brightest.csv
+⏭ Amateur: content no change, skip overwrite
+⏭ Brightest: content no change, skip overwrite
 ✅ Cubesat: file updated -> data/Cubesat.csv
 ✅ Education: file updated -> data/Education.csv
-✅ Engineer: file updated -> data/Engineer.csv
+⏭ Engineer: content no change, skip overwrite
 ✅ Geostationary: file updated -> data/Geostationary.csv
-✅ Globalstar: file updated -> data/Globalstar.csv
-✅ GNSS: file updated -> data/GNSS.csv
+⏭ Globalstar: content no change, skip overwrite
+⏭ GNSS: content no change, skip overwrite
 ✅ Intelsat: file updated -> data/Intelsat.csv
-✅ Iridium: file updated -> data/Iridium.csv
+⏭ Iridium: content no change, skip overwrite
 ✅ Military: file updated -> data/Military.csv
-✅ New: file updated -> data/New.csv
-✅ OneWeb: file updated -> data/OneWeb.csv
-✅ Orbcomm: file updated -> data/Orbcomm.csv
+⏭ New: content no change, skip overwrite
+⏭ OneWeb: content no change, skip overwrite
+⏭ Orbcomm: content no change, skip overwrite
 ✅ Resource: file updated -> data/Resource.csv
 ✅ SatNOGS_Celestrak: file updated -> data/SatNOGS_Celestrak.csv
 ✅ Science: file updated -> data/Science.csv
-✅ Spire: file updated -> data/Spire.csv
+⏭ Spire: content no change, skip overwrite
 ✅ Starlink: file updated -> data/Starlink.csv
 ⏭ Swarm: content no change, skip overwrite
 ✅ Weather: file updated -> data/Weather.csv
-✅ X-Comm: file updated -> data/X-Comm.csv
+⏭ X-Comm: content no change, skip overwrite
 ⏭ Amsat: content no change, skip overwrite
 ⏭ Classified: content no change, skip overwrite
 ⏭ McCants: content no change, skip overwrite
