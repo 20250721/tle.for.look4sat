@@ -2,25 +2,25 @@
 
 This repository automatically checks and updates orbital and transmitter data from various sources every 3 hours for look4sat
 
-**Last Execution:** 2026-06-21 02:27:42 UTC
+**Last Execution:** 2026-06-21 07:22:50 UTC
 
 ```text
 ✅ All: file updated -> data/All.csv
 ⏭ Amateur: content no change, skip overwrite
-⏭ Brightest: content no change, skip overwrite
+✅ Brightest: file updated -> data/Brightest.csv
 ⏭ Cubesat: content no change, skip overwrite
 ⏭ Education: content no change, skip overwrite
 ⏭ Engineer: content no change, skip overwrite
 ✅ Geostationary: file updated -> data/Geostationary.csv
 ⏭ Globalstar: content no change, skip overwrite
-⏭ GNSS: content no change, skip overwrite
+✅ GNSS: file updated -> data/GNSS.csv
 ⏭ Intelsat: content no change, skip overwrite
 ⏭ Iridium: content no change, skip overwrite
 ⏭ Military: content no change, skip overwrite
 ✅ New: file updated -> data/New.csv
 ⏭ OneWeb: content no change, skip overwrite
 ⏭ Orbcomm: content no change, skip overwrite
-⏭ Resource: content no change, skip overwrite
+✅ Resource: file updated -> data/Resource.csv
 ✅ SatNOGS_Celestrak: file updated -> data/SatNOGS_Celestrak.csv
 ⏭ Science: content no change, skip overwrite
 ⏭ Spire: content no change, skip overwrite
@@ -28,9 +28,9 @@ This repository automatically checks and updates orbital and transmitter data fr
 ⏭ Swarm: content no change, skip overwrite
 ⏭ Weather: content no change, skip overwrite
 ⏭ X-Comm: content no change, skip overwrite
-✅ Amsat: file updated -> data/Amsat.txt
+⏭ Amsat: content no change, skip overwrite
 ⏭ Classified: content no change, skip overwrite
-✅ McCants: file updated -> data/McCants.zip
+⏭ McCants: content no change, skip overwrite
 ❌ R4UAB download failed: <urlopen error timed out>
 ⏭ SatNOGS_API: content no change, skip overwrite
 ```
