@@ -2,7 +2,7 @@
 
 This repository automatically checks and updates orbital and transmitter data from various sources every 3 hours for look4sat
 
-**Last Execution:** 2026-06-25 02:00:44 UTC
+**Last Execution:** 2026-06-25 06:37:36 UTC
 
 ```text
 ✅ All: file updated -> data/All.csv
@@ -13,7 +13,7 @@ This repository automatically checks and updates orbital and transmitter data fr
 ⏭ Engineer: content no change, skip overwrite
 ✅ Geostationary: file updated -> data/Geostationary.csv
 ⏭ Globalstar: content no change, skip overwrite
-⏭ GNSS: content no change, skip overwrite
+✅ GNSS: file updated -> data/GNSS.csv
 ⏭ Intelsat: content no change, skip overwrite
 ⏭ Iridium: content no change, skip overwrite
 ⏭ Military: content no change, skip overwrite
@@ -30,7 +30,7 @@ This repository automatically checks and updates orbital and transmitter data fr
 ⏭ X-Comm: content no change, skip overwrite
 ⏭ Amsat: content no change, skip overwrite
 ⏭ Classified: content no change, skip overwrite
-✅ McCants: file updated -> data/McCants.zip
+⏭ McCants: content no change, skip overwrite
 ❌ R4UAB download failed: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1082)>
 ⏭ SatNOGS_API: content no change, skip overwrite
 ```
