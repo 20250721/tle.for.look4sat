@@ -2,7 +2,7 @@
 
 This repository automatically checks and updates orbital and transmitter data from various sources every 3 hours for look4sat
 
-**Last Execution:** 2026-07-05 18:56:16 UTC
+**Last Execution:** 2026-07-05 21:47:25 UTC
 
 ```text
 ✅ All: file updated -> data/All.csv
@@ -14,23 +14,23 @@ This repository automatically checks and updates orbital and transmitter data fr
 ✅ Geostationary: file updated -> data/Geostationary.csv
 ⏭ Globalstar: content no change, skip overwrite
 ✅ GNSS: file updated -> data/GNSS.csv
-✅ Intelsat: file updated -> data/Intelsat.csv
+⏭ Intelsat: content no change, skip overwrite
 ⏭ Iridium: content no change, skip overwrite
 ⏭ Military: content no change, skip overwrite
-✅ New: file updated -> data/New.csv
-✅ OneWeb: file updated -> data/OneWeb.csv
+⏭ New: content no change, skip overwrite
+⏭ OneWeb: content no change, skip overwrite
 ⏭ Orbcomm: content no change, skip overwrite
-✅ Resource: file updated -> data/Resource.csv
-✅ SatNOGS_Celestrak: file updated -> data/SatNOGS_Celestrak.csv
-✅ Science: file updated -> data/Science.csv
-⏭ Spire: content no change, skip overwrite
+⏭ Resource: content no change, skip overwrite
+⏭ SatNOGS_Celestrak: content no change, skip overwrite
+⏭ Science: content no change, skip overwrite
+✅ Spire: file updated -> data/Spire.csv
 ✅ Starlink: file updated -> data/Starlink.csv
 ⏭ Swarm: content no change, skip overwrite
 ⏭ Weather: content no change, skip overwrite
-✅ X-Comm: file updated -> data/X-Comm.csv
+⏭ X-Comm: content no change, skip overwrite
 ⏭ Amsat: content no change, skip overwrite
 ⏭ Classified: content no change, skip overwrite
-✅ McCants: file updated -> data/McCants.zip
-⏭ R4UAB: content no change, skip overwrite
+⏭ McCants: content no change, skip overwrite
+✅ R4UAB: file updated -> data/R4UAB.txt
 ✅ SatNOGS_API: file updated -> data/SatNOGS_API.json
 ```
