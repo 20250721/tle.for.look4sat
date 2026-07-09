@@ -2,35 +2,35 @@
 
 This repository automatically checks and updates orbital and transmitter data from various sources every 3 hours for look4sat
 
-**Last Execution:** 2026-07-09 14:24:11 UTC
+**Last Execution:** 2026-07-09 17:09:40 UTC
 
 ```text
-❌ All download failed: <urlopen error timed out>
-❌ Amateur download failed: <urlopen error timed out>
-❌ Brightest download failed: <urlopen error timed out>
-❌ Cubesat download failed: <urlopen error timed out>
-❌ Education download failed: <urlopen error timed out>
-❌ Engineer download failed: <urlopen error timed out>
-❌ Geostationary download failed: <urlopen error timed out>
-❌ Globalstar download failed: <urlopen error timed out>
-❌ GNSS download failed: <urlopen error timed out>
-❌ Intelsat download failed: <urlopen error timed out>
-❌ Iridium download failed: <urlopen error timed out>
-❌ Military download failed: <urlopen error timed out>
-❌ New download failed: <urlopen error timed out>
-❌ OneWeb download failed: <urlopen error timed out>
-❌ Orbcomm download failed: <urlopen error timed out>
-❌ Resource download failed: <urlopen error timed out>
-❌ SatNOGS_Celestrak download failed: <urlopen error timed out>
-❌ Science download failed: <urlopen error timed out>
-❌ Spire download failed: <urlopen error timed out>
-❌ Starlink download failed: <urlopen error timed out>
-❌ Swarm download failed: <urlopen error timed out>
-❌ Weather download failed: <urlopen error timed out>
-❌ X-Comm download failed: <urlopen error timed out>
-✅ Amsat: file updated -> data/Amsat.txt
+✅ All: file updated -> data/All.csv
+⏭ Amateur: content no change, skip overwrite
+⏭ Brightest: content no change, skip overwrite
+⏭ Cubesat: content no change, skip overwrite
+⏭ Education: content no change, skip overwrite
+⏭ Engineer: content no change, skip overwrite
+✅ Geostationary: file updated -> data/Geostationary.csv
+⏭ Globalstar: content no change, skip overwrite
+✅ GNSS: file updated -> data/GNSS.csv
+⏭ Intelsat: content no change, skip overwrite
+⏭ Iridium: content no change, skip overwrite
+⏭ Military: content no change, skip overwrite
+⏭ New: content no change, skip overwrite
+⏭ OneWeb: content no change, skip overwrite
+⏭ Orbcomm: content no change, skip overwrite
+✅ Resource: file updated -> data/Resource.csv
+✅ SatNOGS_Celestrak: file updated -> data/SatNOGS_Celestrak.csv
+⏭ Science: content no change, skip overwrite
+⏭ Spire: content no change, skip overwrite
+✅ Starlink: file updated -> data/Starlink.csv
+⏭ Swarm: content no change, skip overwrite
+⏭ Weather: content no change, skip overwrite
+⏭ X-Comm: content no change, skip overwrite
+⏭ Amsat: content no change, skip overwrite
 ⏭ Classified: content no change, skip overwrite
-⏭ McCants: content no change, skip overwrite
+✅ McCants: file updated -> data/McCants.zip
 ⏭ R4UAB: content no change, skip overwrite
 ⏭ SatNOGS_API: content no change, skip overwrite
 ```
