@@ -27,7 +27,7 @@ jobs:
           echo "" >> README.md
           echo "This repository automatically checks and updates orbital and transmitter data from various sources every 3 hours for look4sat" >> README.md
           echo "" >> README.md
-          echo "**Last Execution:** $(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> README.md
+          echo "**Last Execution:** $(TZ='Asia/Shanghai' date +'%Y-%m-%d %H:%M:%S CST')" >> README.md
           echo "" >> README.md
           echo '```text' >> README.md
           
@@ -40,7 +40,7 @@ jobs:
         run: |
           # 检测是否有任何文件（包括 README.md）发生变更
           if [ -n "$(git status --porcelain)" ]; then
-            UPDATE_TIME=$(date -u +'%Y-%m-%d %H:%M:%S UTC')
+            UPDATE_TIME=$(TZ='Asia/Shanghai' date +'%Y-%m-%d %H:%M:%S CST')
             > commit_msg.txt
             
             # 检测 data/ 目录是否有数据文件更新
