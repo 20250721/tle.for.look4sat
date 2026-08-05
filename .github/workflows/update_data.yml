@@ -18,11 +18,22 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
+
+      - name: Purge data history (keep .git small)
+        run: |
+          # 必须先于下载执行：git-filter-repo 内部会 reset --hard 到新 HEAD，
+          # 而新 HEAD 已不含 data/，会把工作区中的数据文件一并清掉。
+          # 因此在下载前先重写历史，之后重新生成的数据再作为新快照提交。
+          pip install --quiet git-filter-repo
+          git filter-repo --path data/ --invert-paths --force
+          git remote add origin https://github.com/${{ github.repository }}.git
 
       - name: Run Download Script
         run: |
@@ -39,16 +50,6 @@ jobs:
           python download.py 2>&1 | tee -a README.md
           
           echo '```' >> README.md
-
-      - name: Purge data history (keep .git small)
-        run: |
-          # 使用 git-filter-repo 删除所有历史提交中的 data/ 目录，
-          # 只保留当前最新数据快照，避免 .git 无限膨胀。
-          # --force 绕过"非全新 clone"检查；filter-repo 会移除 origin，
-          # 需要重新添加。
-          pip install --quiet git-filter-repo
-          git filter-repo --path data/ --invert-paths --force
-          git remote add origin https://github.com/${{ github.repository }}.git
 
       - name: Push to Branch
         run: |
