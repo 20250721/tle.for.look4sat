@@ -2,7 +2,7 @@
 
 This repository automatically checks and updates orbital and transmitter data from various sources every 3 hours for look4sat
 
-**Last Execution:** 2026-08-07 17:47:09 CST
+**Last Execution:** 2026-08-07 20:35:05 CST
 
 ```text
 ✅ All: file updated -> data/All.csv
@@ -17,21 +17,21 @@ This repository automatically checks and updates orbital and transmitter data fr
 ⏭ Intelsat: content no change, skip overwrite
 ⏭ Iridium: content no change, skip overwrite
 ⏭ Military: content no change, skip overwrite
-⏭ New: content no change, skip overwrite
+✅ New: file updated -> data/New.csv
 ⏭ OneWeb: content no change, skip overwrite
 ⏭ Orbcomm: content no change, skip overwrite
 ⏭ Resource: content no change, skip overwrite
-✅ SatNOGS_Celestrak: file updated -> data/SatNOGS_Celestrak.csv
+⏭ SatNOGS_Celestrak: content no change, skip overwrite
 ⏭ Science: content no change, skip overwrite
 ⏭ Spire: content no change, skip overwrite
 ✅ Starlink: file updated -> data/Starlink.csv
 ⏭ Swarm: content no change, skip overwrite
 ⏭ Weather: content no change, skip overwrite
 ⏭ X-Comm: content no change, skip overwrite
-⏭ Amsat: content no change, skip overwrite
-⏭ Classified: content no change, skip overwrite
+✅ Amsat: file updated -> data/Amsat.txt
+✅ Classified: file updated -> data/Classified.zip
 ⏭ McCants: content no change, skip overwrite
-✅ R4UAB: file updated -> data/R4UAB.txt
+⏭ R4UAB: content no change, skip overwrite
 ⏭ ARISS: content no change, skip overwrite
 ✅ Satnogs: file updated -> data/Satnogs.txt
 ⏭ SatNOGS_API: content no change, skip overwrite
