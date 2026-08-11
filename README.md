@@ -2,11 +2,11 @@
 
 This repository automatically checks and updates orbital and transmitter data from various sources every 3 hours for look4sat
 
-**Last Execution:** 2026-08-11 23:46:11 CST
+**Last Execution:** 2026-08-12 02:42:30 CST
 
 ```text
 ✅ All: file updated -> data/All.csv
-❌ Amateur download failed: HTTP Error 500: Internal Server Error
+✅ Amateur: file updated -> data/Amateur.csv
 ✅ Brightest: file updated -> data/Brightest.csv
 ✅ Cubesat: file updated -> data/Cubesat.csv
 ✅ Education: file updated -> data/Education.csv
@@ -17,7 +17,7 @@ This repository automatically checks and updates orbital and transmitter data fr
 ✅ Intelsat: file updated -> data/Intelsat.csv
 ✅ Iridium: file updated -> data/Iridium.csv
 ✅ Military: file updated -> data/Military.csv
-✅ New: file updated -> data/New.csv
+⏭ New: content no change, skip overwrite
 ✅ OneWeb: file updated -> data/OneWeb.csv
 ✅ Orbcomm: file updated -> data/Orbcomm.csv
 ✅ Resource: file updated -> data/Resource.csv
@@ -32,7 +32,7 @@ This repository automatically checks and updates orbital and transmitter data fr
 ⏭ Classified: content no change, skip overwrite
 ⏭ McCants: content no change, skip overwrite
 ⏭ R4UAB: content no change, skip overwrite
-⏭ ARISS: content no change, skip overwrite
+✅ ARISS: file updated -> data/ARISS.txt
 ✅ Satnogs: file updated -> data/Satnogs.txt
 ⏭ SatNOGS_API: content no change, skip overwrite
 ```
