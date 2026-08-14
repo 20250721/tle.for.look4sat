@@ -1,23 +1,24 @@
 import urllib.request
 import os
 
-
-
+# ===================== 可自定义配置 =====================
+BASE_URL = "https://xxx.xxx"  # 修改这里为你的实际域名
+# =======================================================
 
 tasks = [
-	{"name": "Celestrak", "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=active&FORMAT=csv", "ext": "csv"},
-	{"name": "Amsat", "url": "https://amsat.org/tle/current/nasabare.txt", "ext": "txt"},
-	{"name": "Mmccants", "url": "https://www.mmccants.org/tles/classfd.zip", "ext": "zip"},
-	{"name": "R4UAB", "url": "https://r4uab.ru/satonline.txt", "ext": "txt"},
-	{"name": "ARISS", "url": "https://live.ariss.org/iss.txt", "ext": "txt"},
-	{"name": "Satnogs", "url": "https://db.satnogs.org/api/tle/?format=3le", "ext": "txt"},
+    {"name": "Celestrak", "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=active&FORMAT=csv", "ext": "csv"},
+    {"name": "Amsat", "url": "https://amsat.org/tle/current/nasabare.txt", "ext": "txt"},
+    {"name": "Mmccants", "url": "https://www.mmccants.org/tles/classfd.zip", "ext": "zip"},
+    {"name": "R4UAB", "url": "https://r4uab.ru/satonline.txt", "ext": "txt"},
+    {"name": "ARISS", "url": "https://live.ariss.org/iss.txt", "ext": "txt"},
+    {"name": "Satnogs", "url": "https://db.satnogs.org/api/tle/?format=3le", "ext": "txt"},
 	
-	{"name": "SatNOGS-transmitters", "url": "https://db.satnogs.org/api/transmitters/?format=json&status=active", "ext": "json"},
-	{"name": "R4UAB-transmitters", "url": "https://r4uab.ru/transmitters.json", "ext": "json"},
+    {"name": "SatNOGS-transmitters", "url": "https://db.satnogs.org/api/transmitters/?format=json&status=active", "ext": "json"},
+    {"name": "R4UAB-transmitters", "url": "https://r4uab.ru/transmitters.json", "ext": "json"}
 ]
 
 os.makedirs("data", exist_ok=True)
-os.makedirs(".tmp_download", exist_ok=True) # 临时下载目录
+os.makedirs(".tmp_download", exist_ok=True)  # 临时下载目录
 
 for task in tasks:
     name = task["name"]
@@ -38,7 +39,7 @@ for task in tasks:
         if "celestrak.org" in url:
             text = content.decode("utf-8", errors="ignore")
             if "GP data has not updated" in text or "Data is updated once" in text:
-                print(f"⏭ {name}: Celestrak rate-limit, skip save")
+                print(f"⏭ {name}: Celestrak rate‑limit, skip save")
                 continue
 
         # 空内容跳过
@@ -76,3 +77,12 @@ if os.path.exists(".tmp_download"):
         os.rmdir(".tmp_download")
     except Exception:
         pass
+
+
+# 输出完整URL列表
+print("\n" + "="*60)
+print("[Generated file urls]")
+for _, _, filenames in os.walk("data"):
+    for fn in filenames:
+        print(f"{BASE_URL}/data/{fn}")
+print("="*60)
