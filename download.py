@@ -1,37 +1,19 @@
 import urllib.request
 import os
 
+
+
+
 tasks = [
-    {"name": "All", "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=active&FORMAT=csv", "ext": "csv"},
-    {"name": "Amateur", "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=amateur&FORMAT=csv", "ext": "csv"},
-    {"name": "Brightest", "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=visual&FORMAT=csv", "ext": "csv"},
-    {"name": "Cubesat", "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=cubesat&FORMAT=csv", "ext": "csv"},
-    {"name": "Education", "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=education&FORMAT=csv", "ext": "csv"},
-    {"name": "Engineer", "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=engineering&FORMAT=csv", "ext": "csv"},
-    {"name": "Geostationary", "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=geo&FORMAT=csv", "ext": "csv"},
-    {"name": "Globalstar", "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=globalstar&FORMAT=csv", "ext": "csv"},
-    {"name": "GNSS", "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=gnss&FORMAT=csv", "ext": "csv"},
-    {"name": "Intelsat", "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=intelsat&FORMAT=csv", "ext": "csv"},
-    {"name": "Iridium", "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=iridium-NEXT&FORMAT=csv", "ext": "csv"},
-    {"name": "Military", "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=military&FORMAT=csv", "ext": "csv"},
-    {"name": "New", "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=last-30-days&FORMAT=csv", "ext": "csv"},
-    {"name": "OneWeb", "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=oneweb&FORMAT=csv", "ext": "csv"},
-    {"name": "Orbcomm", "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=orbcomm&FORMAT=csv", "ext": "csv"},
-    {"name": "Resource", "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=resource&FORMAT=csv", "ext": "csv"},
-    {"name": "SatNOGS_Celestrak", "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=satnogs&FORMAT=csv", "ext": "csv"},
-    {"name": "Science", "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=science&FORMAT=csv", "ext": "csv"},
-    {"name": "Spire", "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=spire&FORMAT=csv", "ext": "csv"},
-    {"name": "Starlink", "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=starlink&FORMAT=csv", "ext": "csv"},
-    {"name": "Swarm", "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=swarm&FORMAT=csv", "ext": "csv"},
-    {"name": "Weather", "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=weather&FORMAT=csv", "ext": "csv"},
-    {"name": "X-Comm", "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=x-comm&FORMAT=csv", "ext": "csv"},
-    {"name": "Amsat", "url": "https://amsat.org/tle/current/nasabare.txt", "ext": "txt"},
-    {"name": "Classified", "url": "https://www.mmccants.org/tles/classfd.zip", "ext": "zip"},
-    {"name": "McCants", "url": "https://www.mmccants.org/tles/inttles.zip", "ext": "zip"},
-    {"name": "R4UAB", "url": "https://r4uab.ru/satonline.txt", "ext": "txt"},
-    {"name": "ARISS", "url": "https://live.ariss.org/iss.txt", "ext": "txt"},
-    {"name": "Satnogs", "url": "https://db.satnogs.org/api/tle/?format=3le", "ext": "txt"},
-    {"name": "SatNOGS_API", "url": "https://db.satnogs.org/api/transmitters/?format=json&status=active", "ext": "json"}
+		{"name": "Celestrak", "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=active&FORMAT=csv", "ext": "csv"},
+		{"name": "Amsat", "url": "https://amsat.org/tle/current/nasabare.txt", "ext": "txt"},
+		{"name": "Mmccants", "url": "https://www.mmccants.org/tles/classfd.zip", "ext": "zip"},
+		{"name": "R4UAB", "url": "https://r4uab.ru/satonline.txt", "ext": "txt"},
+		{"name": "ARISS", "url": "https://live.ariss.org/iss.txt", "ext": "txt"},
+		{"name": "Satnogs", "url": "https://db.satnogs.org/api/tle/?format=3le", "ext": "txt"},   
+		
+		{"name": "SatNOGS-transmitters", "url": "https://db.satnogs.org/api/transmitters/?format=json&status=active", "ext": "json"}
+		{"name": "R4UAB-transmitters", "url": "https://r4uab.ru/transmitters.json", "ext": "json"}
 ]
 
 os.makedirs("data", exist_ok=True)
