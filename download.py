@@ -5,15 +5,15 @@ import os
 
 
 tasks = [
-		{"name": "Celestrak", "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=active&FORMAT=csv", "ext": "csv"},
-		{"name": "Amsat", "url": "https://amsat.org/tle/current/nasabare.txt", "ext": "txt"},
-		{"name": "Mmccants", "url": "https://www.mmccants.org/tles/classfd.zip", "ext": "zip"},
-		{"name": "R4UAB", "url": "https://r4uab.ru/satonline.txt", "ext": "txt"},
-		{"name": "ARISS", "url": "https://live.ariss.org/iss.txt", "ext": "txt"},
-		{"name": "Satnogs", "url": "https://db.satnogs.org/api/tle/?format=3le", "ext": "txt"},   
-		
-		{"name": "SatNOGS-transmitters", "url": "https://db.satnogs.org/api/transmitters/?format=json&status=active", "ext": "json"}
-		{"name": "R4UAB-transmitters", "url": "https://r4uab.ru/transmitters.json", "ext": "json"}
+	{"name": "Celestrak", "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=active&FORMAT=csv", "ext": "csv"},
+	{"name": "Amsat", "url": "https://amsat.org/tle/current/nasabare.txt", "ext": "txt"},
+	{"name": "Mmccants", "url": "https://www.mmccants.org/tles/classfd.zip", "ext": "zip"},
+	{"name": "R4UAB", "url": "https://r4uab.ru/satonline.txt", "ext": "txt"},
+	{"name": "ARISS", "url": "https://live.ariss.org/iss.txt", "ext": "txt"},
+	{"name": "Satnogs", "url": "https://db.satnogs.org/api/tle/?format=3le", "ext": "txt"},
+	
+	{"name": "SatNOGS-transmitters", "url": "https://db.satnogs.org/api/transmitters/?format=json&status=active", "ext": "json"},
+	{"name": "R4UAB-transmitters", "url": "https://r4uab.ru/transmitters.json", "ext": "json"},
 ]
 
 os.makedirs("data", exist_ok=True)
