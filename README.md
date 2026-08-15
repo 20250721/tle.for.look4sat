@@ -2,11 +2,11 @@
 
 This repository automatically checks and updates orbital and transmitter data from various sources every 3 hours for look4sat
 
-**Last Execution:** 2026-08-15 20:12:51 CST
+**Last Execution:** 2026-08-15 23:08:35 CST
 
 ```text
-❌ Celestrak download failed: <urlopen error timed out>
-⏭ Amsat: content no change, skip overwrite
+✅ Celestrak: file updated -> data/Celestrak.csv
+✅ Amsat: file updated -> data/Amsat.txt
 ⏭ Mmccants: content no change, skip overwrite
 ⏭ R4UAB: content no change, skip overwrite
 ⏭ ARISS: content no change, skip overwrite
