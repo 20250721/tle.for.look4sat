@@ -2,16 +2,16 @@
 
 This repository automatically checks and updates orbital and transmitter data from various sources every 3 hours for look4sat
 
-**Last Execution:** 2026-08-16 05:09:10 CST
+**Last Execution:** 2026-08-16 08:31:54 CST
 
 ```text
 ✅ Celestrak: file updated -> data/Celestrak.csv
-⏭ Amsat: content no change, skip overwrite
+✅ Amsat: file updated -> data/Amsat.txt
 ⏭ Mmccants: content no change, skip overwrite
-✅ R4UAB: file updated -> data/R4UAB.txt
+⏭ R4UAB: content no change, skip overwrite
 ⏭ ARISS: content no change, skip overwrite
-✅ Satnogs: file updated -> data/Satnogs.txt
-⏭ SatNOGS-transmitters: content no change, skip overwrite
+❌ Satnogs download failed: <urlopen error [Errno 101] Network is unreachable>
+❌ SatNOGS-transmitters download failed: <urlopen error [Errno 101] Network is unreachable>
 ⏭ R4UAB-transmitters: content no change, skip overwrite
 
 ============================================================
