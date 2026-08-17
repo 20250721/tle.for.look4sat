@@ -2,11 +2,11 @@
 
 This repository automatically checks and updates orbital and transmitter data from various sources every 3 hours for look4sat
 
-**Last Execution:** 2026-08-17 20:17:21 CST
+**Last Execution:** 2026-08-17 23:13:26 CST
 
 ```text
 ✅ Celestrak: file updated -> data/Celestrak.csv
-⏭ Amsat: content no change, skip overwrite
+✅ Amsat: file updated -> data/Amsat.txt
 ⏭ Mmccants: content no change, skip overwrite
 ⏭ R4UAB: content no change, skip overwrite
 ❌ ARISS download failed: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1082)>
