@@ -15,7 +15,7 @@ tasks = [
 	
     {"name": "SatNOGS-transmitters", "url": "https://db.satnogs.org/api/transmitters/?format=json&status=active", "ext": "json"},
     {"name": "R4UAB-transmitters", "url": "https://r4uab.ru/transmitters.json", "ext": "json"},
-	{"name": "Celestrak-json", "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=active&FORMAT=json", "ext": "json"},
+	{"name": "Celestrak-json", "url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=active&FORMAT=json", "ext": "json"}
 ]
 
 os.makedirs("data", exist_ok=True)
