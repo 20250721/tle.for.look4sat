@@ -2,10 +2,10 @@
 
 This repository automatically checks and updates orbital and transmitter data from various sources every 3 hours for look4sat
 
-**Last Execution:** 2026-11-06 03:08:33 CST
+**Last Execution:** 2026-11-06 09:13:34 CST
 
 ```text
-[upd]  Amsat: updated -> data/Amsat.txt
+[skip] Amsat: content no change
 [skip] Mmccants: content no change
 [skip] R4UAB: content no change
 [skip] ARISS: content no change
@@ -13,18 +13,18 @@ This repository automatically checks and updates orbital and transmitter data fr
 [skip] SatNOGS-transmitters: content no change
 [skip] R4UAB-transmitters: content no change
 [upd]  Celestrak-json: updated -> data/Celestrak-json.json
-[csv]  Celestrak.csv regenerated from JSON (16875 records)
+[csv]  Celestrak.csv regenerated from JSON (16871 records)
 
 ============================================================
 [Generated file urls]
-https://tle2.486520.xyz/data/Celestrak.csv
-https://tle2.486520.xyz/data/SatNOGS-transmitters.json
 https://tle2.486520.xyz/data/ARISS.txt
-https://tle2.486520.xyz/data/Amsat.txt
-https://tle2.486520.xyz/data/Celestrak-json.json
+https://tle2.486520.xyz/data/Satnogs.txt
 https://tle2.486520.xyz/data/R4UAB-transmitters.json
 https://tle2.486520.xyz/data/Mmccants.zip
-https://tle2.486520.xyz/data/Satnogs.txt
+https://tle2.486520.xyz/data/Celestrak.csv
+https://tle2.486520.xyz/data/SatNOGS-transmitters.json
+https://tle2.486520.xyz/data/Celestrak-json.json
 https://tle2.486520.xyz/data/R4UAB.txt
+https://tle2.486520.xyz/data/Amsat.txt
 ============================================================
 ```
